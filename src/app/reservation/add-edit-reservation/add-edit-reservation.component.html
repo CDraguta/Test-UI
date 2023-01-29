@@ -1,0 +1,38 @@
+<form>
+    <div class="mb-3">
+      <label for="lastame" class="form-label">Nume</label>
+      <input type="text" class="form-control" name="lastame" [(ngModel)]="lastName" required >
+     
+    </div>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">Prenume</label>
+      <input type="text" class="form-control" name="firstName" [(ngModel)]="firstName"  required>
+    </div>
+    <div class="mb-3">
+      <label for="socialSecurityNumber" class="form-label">CNP</label>
+      <input type="text" class="form-control" [(ngModel)]="socialSecurityNumber" name="socialSecurityNumber" minlength="13" maxlength="13" required>
+    </div>
+    <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Numar telefon</label>
+        <input type="text" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber" required>
+      </div>
+    <div class="mb-3">
+        <label for="roomNumber" class="form-label">Numar camera</label>
+        <input type="number" min="1" class="form-control" [(ngModel)]="roomNumber" name="roomNumber" required>
+    </div>
+    <div class="mb-3">
+        <label for="dateTimeStart">Data/Ora Start</label>
+        <input type="datetime-local"class="form-control" [(ngModel)]="dateTimeStart" name="dateTimeStart" required>
+    </div>
+    <div class="mb-3">
+        <label for="dateTimeEnd">Data/Ora Stop</label>
+        <input type="datetime-local" class="form-control" [(ngModel)]="dateTimeEnd" name="dateTimeEnd" required>
+    </div>
+
+    <button (click)="add()" *ngIf="reservation.id==0" class="btn btn-primary">
+     Adauga
+    </button>
+    <button (click)="update()" *ngIf="reservation.id!=0" class="btn btn-primary">
+      Update
+    </button>
+  </form>
